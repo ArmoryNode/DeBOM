@@ -1,0 +1,8 @@
+source https://api.nuget.org/v3/index.json
+
+framework: net9
+
+storage: none
+nuget Argu
+nuget BlackFox.ColoredPrintf
+nuget FSharp.Control.FusionTasks

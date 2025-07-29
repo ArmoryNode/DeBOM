@@ -1,0 +1,13 @@
+﻿This product includes software under the following terms:
+
+  • vbfox/ColoredPrintf (MIT License)
+    https://github.com/vbfox/ColoredPrintf
+
+  • fsprojects/Argu (Apache License, Version 2.0)
+    https://github.com/fsprojects/Argu
+
+  • kekyo/FSharp.Control.FusionTasks (MIT License)
+    https://github.com/kekyo/FSharp.Control.FusionTasks
+
+Original copyright and license text for each dependency
+can be found in their respective repositories.
