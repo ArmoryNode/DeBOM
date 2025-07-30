@@ -25,7 +25,7 @@ Options:
 
 - [Argu](https://github.com/fsprojects/Argu) (MIT License)
 
-- [FSharp.Control.FusionTasks](https://github.com/kekyo/FSharp.Control.FusionTasks) (MIT License)
+- [FSharp.Control.FusionTasks](https://github.com/kekyo/FSharp.Control.FusionTasks) (Apache 2.0 License)
 
 ## 📜 License
 
