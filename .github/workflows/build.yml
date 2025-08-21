@@ -1,0 +1,58 @@
+name: Build Multi-Platform
+
+on:
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-native-aot:
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+        
+    steps:
+        - name: Checkout Code
+          uses: actions/checkout@v4
+
+        - name: Setup .NET SDK
+          uses: actions/setup-dotnet@v4
+          with:
+            dotnet-version: '9.0.x'
+        
+        - name: Restore Dependencies
+          run: dotnet restore
+
+        - name: Build Project
+          run: dotnet publish -c Release -p:PublishAot=true --no-restore
+
+        - name: Check for executable on Linux
+          if: runner.os == 'Linux'
+          run: |
+            if [ -f "bin/Release/net9.0/linux-x64/publish/DeBOM" ]; then
+              echo: "Native AOT executable found."
+            else
+              echo: "Native AOT executable was not found in Linux build."
+              exit 1
+            fi
+        
+        - name: Check for executable on Windows
+          if: runner.os == 'Windows'
+          run: |
+            if [ -f "bin/Release/net9.0/win-x64/publish/DeBOM.exe" ]; then
+              echo "Native AOT executable found."
+            else
+              echo "Native AOT executable was not found in Windows build."
+              exit 1
+            fi
+
+        - name: Check for executable on macOS
+          if: runner.os == 'macOS'
+          run: |
+            if [ -f "bin/Release/net9.0/osx-x64/publish/DeBOM" ]; then
+              echo "Native AOT executable found."
+            else
+              echo "Native AOT executable was not found in macOS build."
+              exit 1
+            fi

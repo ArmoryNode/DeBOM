@@ -419,3 +419,6 @@ FodyWeavers.xsd
 
 # Rider
 /.idea/
+
+# Ionide
+.fake
