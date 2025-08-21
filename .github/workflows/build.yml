@@ -31,7 +31,7 @@ jobs:
           if: runner.os == 'Linux'
           run: |
             if [ -f "bin/Release/net9.0/linux-x64/publish/DeBOM" ]; then
-              echo: "Native AOT executable found."
+              echo "Native AOT executable found."
             else
               echo: "Native AOT executable was not found in Linux build."
               exit 1
