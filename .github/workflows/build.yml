@@ -45,7 +45,12 @@ jobs:
             else
               echo "Native AOT executable was not found in Windows build."
               exit 1
-            fi
+            if (Test-Path "bin/Release/net9.0/win-x64/publish/DeBOM.exe") {
+              Write-Host "Native AOT executable found."
+            } else {
+              Write-Host "Native AOT executable was not found in Windows build."
+              exit 1
+            }
 
         - name: Check for executable on macOS
           if: runner.os == 'macOS'
