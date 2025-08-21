@@ -25,7 +25,7 @@ jobs:
           run: dotnet tool restore
 
         - name: Restore Dependencies
-          run: dotnet paket restore
+          run: dotnet restore
 
         - name: Build Project
           run: dotnet publish -c Release -p:PublishAot=true --no-restore
