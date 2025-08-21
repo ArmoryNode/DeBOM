@@ -5,6 +5,7 @@
     <TargetFramework>net9.0</TargetFramework>
     <PublishAot>true</PublishAot>
     <RootNamespace>DeBOM</RootNamespace>
+    <RuntimeIdentifier>win-x64;linux-x64;osx-x64</RuntimeIdentifier>
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Constants.fs" />
